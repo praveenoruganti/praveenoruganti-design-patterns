@@ -784,6 +784,93 @@ public class MessageTest {
 - It allows the hiding of implementation details from the client.
 
 
+## Adapter Design Pattern
+- It is a type of structural design pattern.
+- It converts the interface of a class into another interface that a client expects.
+
+Lets start coding
+
+```JAVA
+
+package com.praveenoruganti.designpatterns.structural.adapter;
+
+public interface ITarget {
+	void request();
+}
+
+
+```
+
+```JAVA
+
+package com.praveenoruganti.designpatterns.structural.adapter;
+
+public class Adaptee {
+
+	public void specificRequest() {
+		System.out.println("In Adaptee");
+	}
+
+}
+
+
+```
+
+
+```JAVA
+
+package com.praveenoruganti.designpatterns.structural.adapter;
+
+public class Adapter implements ITarget {
+
+	private Adaptee adaptee;
+
+	Adapter(Adaptee adaptee) {
+		this.adaptee = adaptee;
+	}
+
+	@Override
+	public void request() {
+		System.out.println("Using Adapter");
+	 this.adaptee.specificRequest();
+	}
+
+}
+
+
+```
+
+
+```JAVA
+
+package com.praveenoruganti.designpatterns.structural.adapter;
+
+public class Main {
+
+	public static void main(String args[]) {
+		ITarget target= new Adapter(new Adaptee());
+		target.request();
+	}
+
+}
+
+
+```
+
+### Benefits
+- It allows two or more previously incompatible objects to interact.
+- It allows reusability of existing functionality.
+
+### Limitations
+- No new functionalities can be added
+- Multiple Adapters difficult to maintain
+
+### Adapter Design Pattern in JDK
+- java.util.Arrays#asList()
+- java.util.Collections#list()
+- java.util.Collections#enumeration()
+- java.io.InputStreamReader(InputStream) (returns a Reader)
+
 
 
 
