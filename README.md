@@ -11,7 +11,7 @@ SUN Microsystems constituted a group with four professional with the name of Gan
 According to GOF, they found 23 design patterns as effective solutions for re-occurring problems.
 Java design patterns are divided into 3 i.e. Creational, Structural and Behavioral.
 
-![screenshot of the app](https://raw.githubusercontent.com/praveenoruganti/praveenoruganti-design-patterns/master/images/1.jpg)
+![screenshot of the app](https://raw.githubusercontent.com/praveen/praveen-design-patterns/master/images/1.jpg)
 
 ### Creational patterns
 Creational patterns are ones that create objects for you, rather than having you instantiate objects directly. This gives your program more flexibility in deciding which objects need to be created for a given case. Ex. Singleton pattern – used to restrict the creation of an object to one instance.
@@ -65,7 +65,7 @@ Here with the behavioral patterns
 1.  Using Eager Initialization
 
 ```JAVA
-package com.praveenoruganti.designpatterns.creational.singleton;
+package com.praveen.designpatterns.creational.singleton;
 
 public class EagerSingletonExample {
 
@@ -97,7 +97,7 @@ public class EagerSingletonExample {
 
 ```JAVA
 
-package com.praveenoruganti.designpatterns.creational.singleton;
+package com.praveen.designpatterns.creational.singleton;
 
 public class LazySingletonExample {
 	private static LazySingletonExample instance =null;
@@ -130,7 +130,7 @@ public class LazySingletonExample {
 3.  Using Double checked Locking
 
 ```JAVA
-package com.praveenoruganti.designpatterns.creational.singleton;
+package com.praveen.designpatterns.creational.singleton;
 
 public class DoubleCheckedLockSingletonExample {
 	private static DoubleCheckedLockSingletonExample instance =null;
@@ -168,7 +168,7 @@ public class DoubleCheckedLockSingletonExample {
 
 ```JAVA
 
-package com.praveenoruganti.designpatterns.creational.singleton;
+package com.praveen.designpatterns.creational.singleton;
 
 public class InnerClassSingletonExample {
 
@@ -204,7 +204,7 @@ public class InnerClassSingletonExample {
 
 ```JAVA
 
-package com.praveenoruganti.designpatterns.creational.singleton;
+package com.praveen.designpatterns.creational.singleton;
 
 public enum EnumSingletonExample {
 	INSTANCE;
@@ -255,7 +255,7 @@ Lets start coding
 
 ```JAVA
 
-package com.praveenoruganti.designpatterns.creational.builder;
+package com.praveen.designpatterns.creational.builder;
 
 public class Employee {
 	//All final attributes
@@ -369,7 +369,7 @@ Lets start coding
 
 ```JAVA
 
-package com.praveenoruganti.designpatterns.creational.factory;
+package com.praveen.designpatterns.creational.factory;
 
 public interface NotificationExecutor {
 	public void executeNotification();
@@ -379,7 +379,7 @@ public interface NotificationExecutor {
 
 ```JAVA
 
-package com.praveenoruganti.designpatterns.creational.factory;
+package com.praveen.designpatterns.creational.factory;
 
 public class EmailNotificationExecutor implements NotificationExecutor {
 
@@ -395,7 +395,7 @@ public class EmailNotificationExecutor implements NotificationExecutor {
 
 ```JAVA
 
-package com.praveenoruganti.designpatterns.creational.factory;
+package com.praveen.designpatterns.creational.factory;
 
 public class SMSNotificationExecutor implements NotificationExecutor {
 
@@ -412,7 +412,7 @@ public class SMSNotificationExecutor implements NotificationExecutor {
 
 ```JAVA
 
-package com.praveenoruganti.designpatterns.creational.factory;
+package com.praveen.designpatterns.creational.factory;
 
 public class NoNotificationExecutor implements NotificationExecutor {
 	private String notificationType;
@@ -432,7 +432,7 @@ public class NoNotificationExecutor implements NotificationExecutor {
 
 ```JAVA
 
-package com.praveenoruganti.designpatterns.creational.factory;
+package com.praveen.designpatterns.creational.factory;
 
 public class NotificationExecutorFactory {
 	public static NotificationExecutor getNotificationExecutor(String executorType) {
@@ -457,7 +457,7 @@ public class NotificationExecutorFactory {
 
 ```JAVA
 
-package com.praveenoruganti.designpatterns.creational.factory;
+package com.praveen.designpatterns.creational.factory;
 
 public class NotificationSender {
 
@@ -494,7 +494,7 @@ Abstract factory design pattern is used to mange different object types of same 
 
 ```JAVA
 
-package com.praveenoruganti.designpatterns.creational.abstractfactory;
+package com.praveen.designpatterns.creational.abstractfactory;
 
 public interface Animal {
 
@@ -506,7 +506,7 @@ public interface Animal {
 
 ```JAVA
 
-package com.praveenoruganti.designpatterns.creational.abstractfactory;
+package com.praveen.designpatterns.creational.abstractfactory;
 
 public class Cat implements Animal{
 
@@ -521,7 +521,7 @@ public class Cat implements Animal{
 
 ```JAVA
 
-package com.praveenoruganti.designpatterns.creational.abstractfactory;
+package com.praveen.designpatterns.creational.abstractfactory;
 
 public class Fox implements Animal{
 	@Override
@@ -536,7 +536,7 @@ public class Fox implements Animal{
 
 ```JAVA
 
-package com.praveenoruganti.designpatterns.creational.abstractfactory;
+package com.praveen.designpatterns.creational.abstractfactory;
 
 public class Owl implements Animal{
 
@@ -551,7 +551,7 @@ public class Owl implements Animal{
 
 ```JAVA
 
-package com.praveenoruganti.designpatterns.creational.abstractfactory;
+package com.praveen.designpatterns.creational.abstractfactory;
 
 public abstract class AnimalFactory {
 
@@ -564,7 +564,7 @@ public abstract class AnimalFactory {
 
 ```JAVA
 
-package com.praveenoruganti.designpatterns.creational.abstractfactory;
+package com.praveen.designpatterns.creational.abstractfactory;
 
 public class BirdsFactory extends AnimalFactory{
 
@@ -584,7 +584,7 @@ public class BirdsFactory extends AnimalFactory{
 
 ```JAVA
 
-package com.praveenoruganti.designpatterns.creational.abstractfactory;
+package com.praveen.designpatterns.creational.abstractfactory;
 
 public class MammalsFactory extends AnimalFactory {
 
@@ -609,7 +609,7 @@ public class MammalsFactory extends AnimalFactory {
 
 ```JAVA
 
-package com.praveenoruganti.designpatterns.creational.abstractfactory;
+package com.praveen.designpatterns.creational.abstractfactory;
 
 public class Main {
 
@@ -652,7 +652,7 @@ Some of the Abstract factory pattern example in Java classes are;
 
 ```JAVA
 
-package com.praveenoruganti.designpatterns.structural.bridge;
+package com.praveen.designpatterns.structural.bridge;
 
 public abstract class Message {
 	MessageSender messageSender;
@@ -670,7 +670,7 @@ public abstract class Message {
 
 ```JAVA
 
-package com.praveenoruganti.designpatterns.structural.bridge;
+package com.praveen.designpatterns.structural.bridge;
 
 public interface MessageSender {
 	void sendMessage();
@@ -682,7 +682,7 @@ public interface MessageSender {
 
 ```JAVA
 
-package com.praveenoruganti.designpatterns.structural.bridge;
+package com.praveen.designpatterns.structural.bridge;
 
 public class EmailMessage extends Message {
 
@@ -703,7 +703,7 @@ public class EmailMessage extends Message {
 
 ```JAVA
 
-package com.praveenoruganti.designpatterns.structural.bridge;
+package com.praveen.designpatterns.structural.bridge;
 
 public class EmailMessageSender implements MessageSender {
 
@@ -719,7 +719,7 @@ public class EmailMessageSender implements MessageSender {
 
 ```JAVA
 
-package com.praveenoruganti.designpatterns.structural.bridge;
+package com.praveen.designpatterns.structural.bridge;
 
 public class TextMessage extends Message {
 
@@ -742,7 +742,7 @@ public class TextMessage extends Message {
 
 ```JAVA
 
-package com.praveenoruganti.designpatterns.structural.bridge;
+package com.praveen.designpatterns.structural.bridge;
 
 public class TextMessageSender implements MessageSender {
 
@@ -759,7 +759,7 @@ public class TextMessageSender implements MessageSender {
 
 ```JAVA
 
-package com.praveenoruganti.designpatterns.structural.bridge;
+package com.praveen.designpatterns.structural.bridge;
 
 public class MessageTest {
 
@@ -792,7 +792,7 @@ Lets start coding
 
 ```JAVA
 
-package com.praveenoruganti.designpatterns.structural.adapter;
+package com.praveen.designpatterns.structural.adapter;
 
 public interface ITarget {
 	void request();
@@ -803,7 +803,7 @@ public interface ITarget {
 
 ```JAVA
 
-package com.praveenoruganti.designpatterns.structural.adapter;
+package com.praveen.designpatterns.structural.adapter;
 
 public class Adaptee {
 
@@ -819,7 +819,7 @@ public class Adaptee {
 
 ```JAVA
 
-package com.praveenoruganti.designpatterns.structural.adapter;
+package com.praveen.designpatterns.structural.adapter;
 
 public class Adapter implements ITarget {
 
@@ -843,7 +843,7 @@ public class Adapter implements ITarget {
 
 ```JAVA
 
-package com.praveenoruganti.designpatterns.structural.adapter;
+package com.praveen.designpatterns.structural.adapter;
 
 public class Main {
 
@@ -882,7 +882,7 @@ public class Main {
 
 ```JAVA
 
-package com.praveenoruganti.designpatterns.structural.decorator;
+package com.praveen.designpatterns.structural.decorator;
 
 public interface MenuItem {
 
@@ -897,7 +897,7 @@ public interface MenuItem {
 
 ```JAVA
 
-package com.praveenoruganti.designpatterns.structural.decorator;
+package com.praveen.designpatterns.structural.decorator;
 
 public class Decorator implements MenuItem{
 
@@ -924,7 +924,7 @@ public class Decorator implements MenuItem{
 
 ```JAVA
 
-package com.praveenoruganti.designpatterns.structural.decorator;
+package com.praveen.designpatterns.structural.decorator;
 
 public class Milk extends Decorator{
 
@@ -948,7 +948,7 @@ public class Milk extends Decorator{
 
 ```JAVA
 
-package com.praveenoruganti.designpatterns.structural.decorator;
+package com.praveen.designpatterns.structural.decorator;
 
 public class HotChocolate implements MenuItem{
 
@@ -969,7 +969,7 @@ public class HotChocolate implements MenuItem{
 
 ```JAVA
 
-package com.praveenoruganti.designpatterns.structural.decorator;
+package com.praveen.designpatterns.structural.decorator;
 
 public class Mocha extends Decorator{
 
@@ -994,7 +994,7 @@ public class Mocha extends Decorator{
 
 ```JAVA
 
-package com.praveenoruganti.designpatterns.structural.decorator;
+package com.praveen.designpatterns.structural.decorator;
 
 public class Espresso implements MenuItem{
 
@@ -1014,7 +1014,7 @@ public class Espresso implements MenuItem{
 
 ```JAVA
 
-package com.praveenoruganti.designpatterns.structural.decorator;
+package com.praveen.designpatterns.structural.decorator;
 
 public class Main {
 
