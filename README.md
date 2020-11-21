@@ -19,7 +19,7 @@ Creational patterns are ones that create objects for you, rather than having you
 Here with the Creational Design Patterns
 - Factory Pattern - subclasses are responsible to create the instance of the class.
 - Abstract Factory Pattern - A Factory of Factories
-- [Singleton Pattern] (#Singleton Design Pattern)
+- Singleton Pattern
 - Prototype Pattern
 - Builder Pattern.
 - Object Pool Pattern.
@@ -29,31 +29,31 @@ Eases the design by identifying a way to realize relationship between entities.
 Ex. Flyweight pattern – high quantity objects to share common properties object to save space.
 
 Here with the Structural Design Patterns.
-1. Adapter
-2. Bridge
-3. Filter
-4. Composite
-5. Decorator
-6. Facade
-7. Flyweight
-8. Proxy
+-  Adapter
+-  Bridge
+-  Filter
+-  Composite
+-  Decorator
+-  Facade
+-  Flyweight
+-  Proxy
 
 ### Behavioral patterns
 A solution for the ideal interaction between objects and how to provide loose coupling and flexibility
 Ex. Observer pattern – get notified of the change of the state of an object being observed (observer/subject)
 
 Here with the behavioral patterns
-1. Chain of Responsibility
-2. Command
-3. Interpreter
-4. Iterator
-5. Mediator
-6. Momento
-7. Observer
-8. State
-9. Strategy
-10. Template method
-11. Visitor
+-  Chain of Responsibility
+-  Command
+-  Interpreter
+-  Iterator
+-  Mediator
+-  Momento
+-  Observer
+-  State
+- Strategy
+-  Template method
+-  Visitor
 
 
 ## Singleton Design Pattern
@@ -62,7 +62,7 @@ It is a type of Creational Design Pattern.
 This is a pattern which restricts the instantiation of a class to one object.
 We can make singleton class using below 5 approaches and my favourite is static inner class and Enum.
 
-1. Using Eager Initialization
+-  Using Eager Initialization
 
 ```JAVA
 package com.praveenoruganti.designpatterns.creational.singleton;
@@ -93,7 +93,7 @@ public class EagerSingletonExample {
 
 ```
 
-2. Using Lazy Initialization
+-  Using Lazy Initialization
 
 ```JAVA
 
@@ -127,7 +127,7 @@ public class LazySingletonExample {
 
 ```
 
-3. Using Double checked Locking
+-  Using Double checked Locking
 
 ```JAVA
 package com.praveenoruganti.designpatterns.creational.singleton;
@@ -164,7 +164,7 @@ public class DoubleCheckedLockSingletonExample {
 
 ```
 
-4. Using static inner static class
+-  Using static inner static class
 
 ```JAVA
 
@@ -200,7 +200,7 @@ public class InnerClassSingletonExample {
 
 ```
 
-5. Using Enum
+-  Using Enum
 
 ```JAVA
 
