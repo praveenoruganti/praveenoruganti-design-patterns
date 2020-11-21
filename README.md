@@ -243,3 +243,245 @@ Some of the singleton pattern example in Java classes are;
 2. java.lang.System.getSecurityManager(): This method returns a SecurityManager for the current platform.
 3. java.awt.Desktop.getDesktop()
 
+
+## Builder Design Pattern
+
+It is a type of Creational Design Pattern.
+Builder pattern was introduced to solve some of the problems with Factory and Abstract Factory design patterns when the Object contains a lot of attributes.
+Static factories and constructors share a limitation, they dont scale well to large number of optional paramaters.
+Builder pattern solves the issue with large number of optional parameters and inconsistent state by providing a way to build the object step-by-step and provide a method that will actually return the final Object.
+Lets start coding
+
+```JAVA
+
+package com.praveenoruganti.designpatterns.creational.builder;
+
+public class Employee {
+	//All final attributes
+	private final int empId;
+	private final String empName;
+	private final double empSalary;
+	private final String empAddress;
+
+	private Employee(EmployeeBuilder builder) {
+		this.empId = builder.empId;
+		this.empName = builder.empName;
+		this.empSalary = builder.empSalary;
+		this.empAddress = builder.empAddress;
+	}
+
+	//All getter, and NO setter to provde immutability
+	public int getEmpId() {
+		return empId;
+	}
+
+	public String getEmpName() {
+		return empName;
+	}
+
+	public double getEmpSalary() {
+		return empSalary;
+	}
+
+	public String getEmpAddress() {
+		return empAddress;
+	}
+
+	public static class EmployeeBuilder {
+		private int empId;
+		private String empName;
+		private double empSalary;
+		private String empAddress;
+
+		EmployeeBuilder() {
+
+		}
+
+		public EmployeeBuilder empId(int empId) {
+			this.empId = empId;
+			return this;
+		}
+
+		public EmployeeBuilder empName(String empName) {
+			this.empName = empName;
+			return this;
+		}
+
+		public EmployeeBuilder empSalary(double empSalary) {
+			this.empSalary = empSalary;
+			return this;
+		}
+
+		public EmployeeBuilder empAddress(String empAddress) {
+			this.empAddress = empAddress;
+			return this;
+		}
+		 //Return the finally constructed  Employee object
+		public Employee build() {
+			Employee emp = new Employee(this);
+			return emp;
+		}
+	}
+
+	@Override
+	public String toString() {
+		return "Employee [empId=" + empId + ", empName=" + empName + ", empSalary=" + empSalary + ", empAddress="
+				+ empAddress + "]";
+	}
+
+	public static void main(String args[]) {
+		Employee emp = new Employee.EmployeeBuilder().empId(149903).empName("Praveen").empSalary(1000000d)
+				.empAddress("Hyderabad").build();
+		System.out.println(emp);
+	}
+
+}
+
+
+```
+### Benefits
+1. Solves the multiple constructor
+2. problem(telescoping constructor)
+3. Static inner class(builder class)
+4. Internally required constructor
+5. removes the need for setters
+
+### Limitations
+1. Immutable
+2. Inner static class
+3. Design first
+4.Complex
+
+### Builder Design Pattern Example in JDK
+Some of the builder pattern example in Java classes are;
+1. java.lang.StringBuilder#append() (unsynchronized)
+2. java.lang.StringBuffer#append() (synchronized)
+3. DocumentBuilder
+4. Locale.Builder
+
+
+## Factory Design Pattern
+It is a type of Creational Design Pattern.
+It doesn't exposes instantiation or creation logic instead subclass create the object.
+Lets start coding
+
+```JAVA
+
+package com.praveenoruganti.designpatterns.creational.factory;
+
+public interface NotificationExecutor {
+	public void executeNotification();
+}
+
+```
+
+```JAVA
+
+package com.praveenoruganti.designpatterns.creational.factory;
+
+public class EmailNotificationExecutor implements NotificationExecutor {
+
+	@Override
+	public void executeNotification() {
+		System.out.println("Email notification sent");
+	}
+
+}
+
+
+```
+
+```JAVA
+
+package com.praveenoruganti.designpatterns.creational.factory;
+
+public class SMSNotificationExecutor implements NotificationExecutor {
+
+	@Override
+	public void executeNotification() {
+		System.out.println("SMS notification sent.");
+	}
+
+}
+
+
+```
+
+
+```JAVA
+
+package com.praveenoruganti.designpatterns.creational.factory;
+
+public class NoNotificationExecutor implements NotificationExecutor {
+	private String notificationType;
+
+	NoNotificationExecutor(String notificationType) {
+		this.notificationType = notificationType;
+	}
+	@Override
+	public void executeNotification() {
+		System.out.println("Notification Implementation not defined for "+ notificationType);
+	}
+
+}
+
+
+```
+
+```JAVA
+
+package com.praveenoruganti.designpatterns.creational.factory;
+
+public class NotificationExecutorFactory {
+	public static NotificationExecutor getNotificationExecutor(String executorType) {
+
+		switch (executorType) {
+		case "Email":
+			return new EmailNotificationExecutor();
+
+		case "SMS":
+			return new SMSNotificationExecutor();
+
+		default:
+			return new NoNotificationExecutor(executorType);
+
+		}
+
+	}
+}
+
+```
+
+
+```JAVA
+
+package com.praveenoruganti.designpatterns.creational.factory;
+
+public class NotificationSender {
+
+	public static void main(String[] args) {
+		NotificationExecutorFactory.getNotificationExecutor("Email").executeNotification();
+		NotificationExecutorFactory.getNotificationExecutor("SMS").executeNotification();
+		NotificationExecutorFactory.getNotificationExecutor("FTP").executeNotification();
+	}
+
+}
+
+
+```
+
+### Benefits
+1. Creation of different types of objects is possible at run time
+2. It separates the object creation logic from the object usage logic
+3.Removes duplicate code
+Thus, makes changing or addition to object creation easier
+
+### Limitations
+1. The different types of objects created must have the same parent class
+2. The addition of new classes and interfaces could increase the complexity of the code
+
+### Factory Design Pattern Example in JDK
+Some of the factory pattern example in Java classes are;
+1. Calender.getInstance()
+2. NumberFormat.getInstance()
+
