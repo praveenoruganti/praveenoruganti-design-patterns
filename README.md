@@ -872,5 +872,181 @@ public class Main {
 - java.io.InputStreamReader(InputStream) (returns a Reader)
 
 
+## Decorator Pattern
+
+- It is a type of Structural Design Pattern.
+- A Decorator Pattern says that just "attach a flexible additional responsibilities to an object dynamically".
+- In other words, The Decorator Pattern uses composition instead of inheritance to extend the functionality of an object at runtime.
+- The Decorator Pattern is also known as Wrapper.
+
+
+```JAVA
+
+package com.praveenoruganti.designpatterns.structural.decorator;
+
+public interface MenuItem {
+
+	public double cost();
+
+	public String description();
+
+}
+
+
+```
+
+```JAVA
+
+package com.praveenoruganti.designpatterns.structural.decorator;
+
+public class Decorator implements MenuItem{
+
+	protected MenuItem beverage;
+
+	public Decorator(MenuItem _beverage){
+		beverage = _beverage;
+	}
+
+	@Override
+	public double cost() {
+		return beverage.cost();
+	}
+
+	@Override
+	public String description() {
+		return beverage.description();
+	}
+
+}
+
+
+```
+
+```JAVA
+
+package com.praveenoruganti.designpatterns.structural.decorator;
+
+public class Milk extends Decorator{
+
+	public Milk(MenuItem _beverage) {
+		super(_beverage);
+	}
+
+	@Override
+	public double cost() {
+		return beverage.cost() + 7.4;
+	}
+
+	@Override
+	public String description() {
+		return beverage.description() + ", Milk";
+	}
+}
+
+
+```
+
+```JAVA
+
+package com.praveenoruganti.designpatterns.structural.decorator;
+
+public class HotChocolate implements MenuItem{
+
+	@Override
+	public double cost() {
+		return 20.5;
+	}
+
+	@Override
+	public String description() {
+		return "Hot Chocolate";
+	}
+
+}
+
+
+```
+
+```JAVA
+
+package com.praveenoruganti.designpatterns.structural.decorator;
+
+public class Mocha extends Decorator{
+
+	public Mocha(MenuItem _beverage) {
+		super(_beverage);
+	}
+
+	@Override
+	public double cost() {
+		return beverage.cost() + 5.0;
+	}
+
+	@Override
+	public String description() {
+		return beverage.description() + ", Mocha";
+	}
+
+}
+
+
+```
+
+```JAVA
+
+package com.praveenoruganti.designpatterns.structural.decorator;
+
+public class Espresso implements MenuItem{
+
+	@Override
+	public double cost() {
+		return 18.0;
+	}
+
+	@Override
+	public String description() {
+		return "Espresso roast";
+	}
+}
+
+
+```
+
+```JAVA
+
+package com.praveenoruganti.designpatterns.structural.decorator;
+
+public class Main {
+
+	public static void main(String[] args) {
+
+		// Order hot chocolate
+		MenuItem beverage = new HotChocolate();
+
+		// add mocha flavor to it
+		beverage = new Mocha(beverage);
+
+		// get invoice
+		System.out.println("Your Order: " + beverage.description());
+		System.out.println("Total Cost: " + beverage.cost());
+
+	}
+
+}
+
+
+```
+
+### Limitations
+- New class for every feature
+- Number of Objects are more hence more complexity
+- More complex for client
+
+### Decorator pattern examples in JDK
+- All subclasses of java.io.InputStream, OutputStream, Reader and Writer have a constructor taking an instance of same type.
+- java.util.Collections, the checkedXXX(), synchronizedXXX() and unmodifiableXXX() methods.
+- javax.servlet.http.HttpServletRequestWrapper and HttpServletResponseWrapper
+- javax.swing.JScrollPane
+
 
 
