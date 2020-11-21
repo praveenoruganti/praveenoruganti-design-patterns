@@ -58,11 +58,11 @@ Here with the behavioral patterns
 
 ## Singleton Design Pattern
 
-It is a type of Creational Design Pattern.
-This is a pattern which restricts the instantiation of a class to one object.
-We can make singleton class using below 5 approaches and my favourite is static inner class and Enum.
+- It is a type of Creational Design Pattern.
+- This is a pattern which restricts the instantiation of a class to one object.
+- We can make singleton class using below 5 approaches and my favourite is static inner class and Enum.
 
--  Using Eager Initialization
+1.  Using Eager Initialization
 
 ```JAVA
 package com.praveenoruganti.designpatterns.creational.singleton;
@@ -93,7 +93,7 @@ public class EagerSingletonExample {
 
 ```
 
--  Using Lazy Initialization
+2. Using Lazy Initialization
 
 ```JAVA
 
@@ -127,7 +127,7 @@ public class LazySingletonExample {
 
 ```
 
--  Using Double checked Locking
+3.  Using Double checked Locking
 
 ```JAVA
 package com.praveenoruganti.designpatterns.creational.singleton;
@@ -164,7 +164,7 @@ public class DoubleCheckedLockSingletonExample {
 
 ```
 
--  Using static inner static class
+4.  Using static inner static class
 
 ```JAVA
 
@@ -200,7 +200,7 @@ public class InnerClassSingletonExample {
 
 ```
 
--  Using Enum
+5.  Using Enum
 
 ```JAVA
 
@@ -224,24 +224,25 @@ public enum EnumSingletonExample {
 ```
 
 ### Benefits
-1. Limits the objects creations
-2. Reduces the memory required
-3. Reduces garbage collection
-4. Helps in Lazy initialization. That means, an object is not created until we need it and call the getInstance() method
-5. Saves memory as the instances are reused
+- Limits the objects creations
+- Reduces the memory required
+- Reduces garbage collection
+- Helps in Lazy initialization. That means, an object is not created until we need it and call the getInstance() method
+- Saves memory as the instances are reused
 
 ### Limitations
-1. Same object is shared hence the object must be immutable
-2. We can not have class level variables,If we use they will be overridden by other client
-3. Extra code need to write for making it singleton this increases complexity
-4. The getInstance() method is not thread safe, but can be overcome by using synchronized keyword
+- Same object is shared hence the object must be immutable
+- We can not have class level variables,If we use they will be overridden by other client
+- Extra code need to write for making it singleton this increases complexity
+-  The getInstance() method is not thread safe, but can be overcome by using synchronized keyword
+
 Singleton Pattern is generally used for logging,driver objects,caching and threadpool.
 
 ### Singleton Design Pattern Example in JDK
 Some of the singleton pattern example in Java classes are;
-1. java.lang.Runtime.getRuntime(): This method gives Runtime class that has only one instance in a JVM.
-2. java.lang.System.getSecurityManager(): This method returns a SecurityManager for the current platform.
-3. java.awt.Desktop.getDesktop()
+- java.lang.Runtime.getRuntime(): This method gives Runtime class that has only one instance in a JVM.
+- java.lang.System.getSecurityManager(): This method returns a SecurityManager for the current platform.
+- java.awt.Desktop.getDesktop()
 
 
 ## Builder Design Pattern
@@ -340,29 +341,30 @@ public class Employee {
 
 ```
 ### Benefits
-1. Solves the multiple constructor
-2. problem(telescoping constructor)
-3. Static inner class(builder class)
-4. Internally required constructor
-5. removes the need for setters
+- Solves the multiple constructor
+- problem(telescoping constructor)
+- Static inner class(builder class)
+- Internally required constructor
+- removes the need for setters
 
 ### Limitations
-1. Immutable
-2. Inner static class
-3. Design first
-4.Complex
+- Immutable
+- Inner static class
+- Design first
+- Complex
 
 ### Builder Design Pattern Example in JDK
 Some of the builder pattern example in Java classes are;
-1. java.lang.StringBuilder#append() (unsynchronized)
-2. java.lang.StringBuffer#append() (synchronized)
-3. DocumentBuilder
-4. Locale.Builder
+- java.lang.StringBuilder#append() (unsynchronized)
+- java.lang.StringBuffer#append() (synchronized)
+- DocumentBuilder
+- Locale.Builder
 
 
 ## Factory Design Pattern
-It is a type of Creational Design Pattern.
-It doesn't exposes instantiation or creation logic instead subclass create the object.
+- It is a type of Creational Design Pattern.
+- It doesn't exposes instantiation or creation logic instead subclass create the object.
+
 Lets start coding
 
 ```JAVA
@@ -471,19 +473,19 @@ public class NotificationSender {
 ```
 
 ### Benefits
-1. Creation of different types of objects is possible at run time
-2. It separates the object creation logic from the object usage logic
-3.Removes duplicate code
+- Creation of different types of objects is possible at run time
+- It separates the object creation logic from the object usage logic
+- Removes duplicate code
 Thus, makes changing or addition to object creation easier
 
 ### Limitations
-1. The different types of objects created must have the same parent class
-2. The addition of new classes and interfaces could increase the complexity of the code
+- The different types of objects created must have the same parent class
+- The addition of new classes and interfaces could increase the complexity of the code
 
 ### Factory Design Pattern Example in JDK
 Some of the factory pattern example in Java classes are;
-1. Calender.getInstance()
-2. NumberFormat.getInstance()
+- Calender.getInstance()
+- NumberFormat.getInstance()
 
 
 ## Abstract Factory Design Pattern
@@ -627,20 +629,161 @@ public class Main {
 ```
 
 ### Benefits
-1.It helps to group related objects or functions
-2.Also, reduces errors of mixing of objects or functions from different groups
-3.Helps to abstract code so that user don’t need to worry about object creations
+- It helps to group related objects or functions
+- Also, reduces errors of mixing of objects or functions from different groups
+- Helps to abstract code so that user don’t need to worry about object creations
 
 ### Limitations
-1.Only useful when we have to group processes or objects
-2.Before getting object or calling the function we need to get the factory which adds one more processes
-3.Adds more classes and abstraction hence code could become complex
+- Only useful when we have to group processes or objects
+- Before getting object or calling the function we need to get the factory which adds one more processes
+- Adds more classes and abstraction hence code could become complex
 
 ### Abstract Factory Design Pattern Example in JDK
 Some of the Abstract factory pattern example in Java classes are;
-1.javax.xml.parsers.DocumentBuilderFactory#newInstance()
-2.javax.xml.transform.TransformerFactory#newInstance()
-3.javax.xml.xpath.XPathFactory#newInstance()
+- javax.xml.parsers.DocumentBuilderFactory#newInstance()
+- javax.xml.transform.TransformerFactory#newInstance()
+- javax.xml.xpath.XPathFactory#newInstance()
+
+
+## Bridge Design Pattern
+- It is a type of Structural Design Pattern.
+- It allows you to separate the abstraction from implementation.
+- A classic example of bridge is Drivers.
+
+```JAVA
+
+package com.praveenoruganti.designpatterns.structural.bridge;
+
+public abstract class Message {
+	MessageSender messageSender;
+
+	Message(MessageSender messageSender) {
+		this.messageSender = messageSender;
+	}
+
+	abstract void send();
+}
+
+
+
+```
+
+```JAVA
+
+package com.praveenoruganti.designpatterns.structural.bridge;
+
+public interface MessageSender {
+	void sendMessage();
+}
+
+
+```
+
+
+```JAVA
+
+package com.praveenoruganti.designpatterns.structural.bridge;
+
+public class EmailMessage extends Message {
+
+	EmailMessage(MessageSender messageSender) {
+		super(messageSender);
+	}
+
+	@Override
+	void send() {
+		messageSender.sendMessage();
+	}
+
+}
+
+
+```
+
+
+```JAVA
+
+package com.praveenoruganti.designpatterns.structural.bridge;
+
+public class EmailMessageSender implements MessageSender {
+
+	@Override
+	public void sendMessage() {
+		System.out.println("Email Message Sent");
+	}
+}
+
+
+```
+
+
+```JAVA
+
+package com.praveenoruganti.designpatterns.structural.bridge;
+
+public class TextMessage extends Message {
+
+	TextMessage(MessageSender messageSender){
+		super(messageSender);
+	}
+
+	@Override
+	void send() {
+		messageSender.sendMessage();
+	}
+
+
+
+}
+
+
+```
+
+
+```JAVA
+
+package com.praveenoruganti.designpatterns.structural.bridge;
+
+public class TextMessageSender implements MessageSender {
+
+	@Override
+	public void sendMessage() {
+		System.out.println("Text Message Sent");
+	}
+
+}
+
+
+```
+
+
+```JAVA
+
+package com.praveenoruganti.designpatterns.structural.bridge;
+
+public class MessageTest {
+
+	public static void main(String args[]) {
+		MessageSender txtmessageSender = new TextMessageSender();
+		Message txtMessage= new TextMessage(txtmessageSender);
+		txtMessage.send();
+
+		MessageSender emailmessageSender = new EmailMessageSender();
+		Message emailMessage= new EmailMessage(emailmessageSender);
+		emailMessage.send();
+	}
+
+}
+
+
+```
+
+### Benefits
+- It enables the separation of implementation from the interface.
+- It improves the extensibility.
+- It allows the hiding of implementation details from the client.
+
+
 
 
 
