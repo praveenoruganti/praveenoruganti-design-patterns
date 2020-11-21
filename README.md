@@ -485,3 +485,162 @@ Some of the factory pattern example in Java classes are;
 1. Calender.getInstance()
 2. NumberFormat.getInstance()
 
+
+## Abstract Factory Design Pattern
+It is a type of Creational Design Pattern.
+Abstract factory design pattern is used to mange different object types of same family. All the object should belong to same family but they are of different categories.
+
+```JAVA
+
+package com.praveenoruganti.designpatterns.creational.abstractfactory;
+
+public interface Animal {
+
+	public void display();
+}
+
+
+```
+
+```JAVA
+
+package com.praveenoruganti.designpatterns.creational.abstractfactory;
+
+public class Cat implements Animal{
+
+	@Override
+	public void display() {
+		System.out.println("I'm the Cat");
+	}
+
+}
+
+```
+
+```JAVA
+
+package com.praveenoruganti.designpatterns.creational.abstractfactory;
+
+public class Fox implements Animal{
+	@Override
+	public void display() {
+		System.out.println("I'm the Fox");
+	}
+
+}
+
+
+```
+
+```JAVA
+
+package com.praveenoruganti.designpatterns.creational.abstractfactory;
+
+public class Owl implements Animal{
+
+	public void display() {
+		System.out.println("I'm the Owl");
+	}
+
+}
+
+
+```
+
+```JAVA
+
+package com.praveenoruganti.designpatterns.creational.abstractfactory;
+
+public abstract class AnimalFactory {
+
+	public abstract Animal create(String animal);
+
+}
+
+
+```
+
+```JAVA
+
+package com.praveenoruganti.designpatterns.creational.abstractfactory;
+
+public class BirdsFactory extends AnimalFactory{
+
+	@Override
+	public Animal create(String animal) {
+		animal = animal.toUpperCase();
+		if(animal.equals("OWL")){
+			return new Owl();
+		}
+		return null;
+	}
+
+}
+
+
+```
+
+```JAVA
+
+package com.praveenoruganti.designpatterns.creational.abstractfactory;
+
+public class MammalsFactory extends AnimalFactory {
+
+	@Override
+	public Animal create(String animal) {
+		animal = animal.toUpperCase();
+		switch (animal) {
+		case "CAT":
+			return new Cat();
+		case "FOX":
+			return new Fox();
+		default:
+			return null;
+		}
+
+	}
+
+}
+
+
+```
+
+```JAVA
+
+package com.praveenoruganti.designpatterns.creational.abstractfactory;
+
+public class Main {
+
+	public static void main(String[] args) {
+		AnimalFactory factory = new BirdsFactory();
+		Animal owl = factory.create("Owl");
+		owl.display();
+		factory = new MammalsFactory();
+		Animal fox = factory.create("Fox");
+		fox.display();
+
+	}
+
+}
+
+
+```
+
+### Benefits
+1.It helps to group related objects or functions
+2.Also, reduces errors of mixing of objects or functions from different groups
+3.Helps to abstract code so that user don’t need to worry about object creations
+
+### Limitations
+1.Only useful when we have to group processes or objects
+2.Before getting object or calling the function we need to get the factory which adds one more processes
+3.Adds more classes and abstraction hence code could become complex
+
+### Abstract Factory Design Pattern Example in JDK
+Some of the Abstract factory pattern example in Java classes are;
+1.javax.xml.parsers.DocumentBuilderFactory#newInstance()
+2.javax.xml.transform.TransformerFactory#newInstance()
+3.javax.xml.xpath.XPathFactory#newInstance()
+
+
+
