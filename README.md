@@ -17,12 +17,12 @@ Java design patterns are divided into 3 i.e. Creational, Structural and Behavior
 Creational patterns are ones that create objects for you, rather than having you instantiate objects directly. This gives your program more flexibility in deciding which objects need to be created for a given case. Ex. Singleton pattern – used to restrict the creation of an object to one instance.
 
 Here with the Creational Design Patterns
-1. Factory Pattern - subclasses are responsible to create the instance of the class.
-2. Abstract Factory Pattern - A Factory of Factories
-3. Singleton Pattern
-4. Prototype Pattern
-5. Builder Pattern.
-6. Object Pool Pattern.
+- Factory Pattern - subclasses are responsible to create the instance of the class.
+- Abstract Factory Pattern - A Factory of Factories
+- [Singleton Pattern] (#Singleton Design Pattern)
+- Prototype Pattern
+- Builder Pattern.
+- Object Pool Pattern.
 
 ### Structural patterns
 Eases the design by identifying a way to realize relationship between entities.
