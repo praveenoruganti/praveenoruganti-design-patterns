@@ -38,7 +38,7 @@ Here with the Structural Design Patterns.
 7. Flyweight
 8. Proxy
 
-###Behavioral patterns
+### Behavioral patterns
 A solution for the ideal interaction between objects and how to provide loose coupling and flexibility
 Ex. Observer pattern – get notified of the change of the state of an object being observed (observer/subject)
 
