@@ -486,6 +486,7 @@ Thus, makes changing or addition to object creation easier
 Some of the factory pattern example in Java classes are;
 - Calender.getInstance()
 - NumberFormat.getInstance()
+- DriverManager.getConnection(-,-,-)
 
 
 ## Abstract Factory Design Pattern
@@ -1047,6 +1048,129 @@ public class Main {
 - java.util.Collections, the checkedXXX(), synchronizedXXX() and unmodifiableXXX() methods.
 - javax.servlet.http.HttpServletRequestWrapper and HttpServletResponseWrapper
 - javax.swing.JScrollPane
+
+## Template Method Design Pattern
+
+Template Method Design Pattern is a Behavioral Design Pattern.
+In this pattern, we will have base template method; it defines an algorithm with some abstract steps. These steps have to be implemented by sub-classes.
+
+For example, I have a class called DataRenderer this class is responsible for rendering the data to output console. But to render the data first; we need to read and process it. so we have methods like readData() and processData(). But these methods will be declared as abstract as there are multiple sources from which you can read the data and multiple ways you can process it. But to render the data you need to read and process it, so the algorithm for render() is fixed which is read and process but how to read, from where to read and how to process is left to sub-classes to handle as shown below.
+
+```JAVA
+
+package com.praveen.designpatterns.behavioral.template;
+
+public abstract class DataRenderer {
+
+	// algorithm is fixed
+	public final void render() {
+		String data = null;
+		String pData = null;
+		data = readData();
+		pData = processData(data);
+		System.out.println(pData);
+	}
+
+	protected abstract String readData();
+
+	protected abstract String processData(String data);
+
+}
+
+
+```
+
+```JAVA
+
+package com.praveen.designpatterns.behavioral.template;
+
+public class XMLDataRenderer extends DataRenderer {
+	
+	@Override
+	protected String readData() {
+		return "xml data";
+	}
+
+	@Override
+	protected String processData(String data) {
+		return "processed " + data;
+	}
+
+	
+
+}
+
+
+```
+
+```JAVA
+
+package com.praveen.designpatterns.behavioral.template;
+
+public class TextDataRenderer extends DataRenderer {
+	
+	@Override
+	protected String readData() {
+		return "text data";
+	}
+
+	@Override
+	protected String processData(String data) {
+		return "processed " + data;
+	}
+
+	
+
+}
+
+
+```
+
+```JAVA
+
+package com.praveen.designpatterns.behavioral.template;
+
+public class Main {
+
+	public static void main(String[] args) {
+
+		DataRenderer renderer = new XMLDataRenderer();
+		renderer.render();
+	}
+
+}
+
+
+```
+
+In the above example the responsibilities of reading and processing the data is left to the sub-classes. render() method remains same calling the methods of your sub-classes.
+
+Now if client wants to render the data, he can create an object of XMLDataRenderer or TextDataRenderer and has to call the render() method which thereby delegate the call to readData() and processData() as per the algorithm shown above.
+
+We have declared the render() method as final in base class so that the subclasses cannot change the behavior of it.
+
+### Advantages
+
+- There is no code duplication.
+- Code reuse happens with the Template Method pattern as it uses inheritance and not composition. Only a few methods need to be overridden.
+- Flexibility lets subclasses decide how to implement steps in an algorithm.
+
+### Disadvantages
+
+- Debugging and understanding the sequence of flow in the Template Method pattern can be confusing at times. You may end up implementing a method that shouldn't be implemented or not implementing an abstract method at all. Documentation and strict error handling has to be done.
+
+
+
+
+
+
+
+
+
+
+
+ 
+
 
 
 
