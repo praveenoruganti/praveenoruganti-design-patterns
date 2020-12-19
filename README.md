@@ -14,7 +14,7 @@ Java design patterns are divided into 3 i.e. Creational, Structural and Behavior
 ![screenshot of the app](https://raw.githubusercontent.com/praveenoruganti/praveenoruganti-design-patterns/master/images/1.jpg)
 
 ### Creational patterns
-Creational patterns are ones that create objects for you, rather than having you instantiate objects directly. This gives your program more flexibility in deciding which objects need to be created for a given case. Ex. Singleton pattern – used to restrict the creation of an object to one instance.
+Creational patterns are ones that create objects for you, rather than having you instantiate objects directly. This gives your program more flexibility in deciding which objects need to be created for a given case. Ex. Singleton pattern â€“ used to restrict the creation of an object to one instance.
 
 Here with the Creational Design Patterns
 - Factory Pattern - subclasses are responsible to create the instance of the class.
@@ -26,7 +26,7 @@ Here with the Creational Design Patterns
 
 ### Structural patterns
 Eases the design by identifying a way to realize relationship between entities.
-Ex. Flyweight pattern – high quantity objects to share common properties object to save space.
+Ex. Flyweight pattern â€“ high quantity objects to share common properties object to save space.
 
 Here with the Structural Design Patterns.
 -  Adapter
@@ -40,7 +40,7 @@ Here with the Structural Design Patterns.
 
 ### Behavioral patterns
 A solution for the ideal interaction between objects and how to provide loose coupling and flexibility
-Ex. Observer pattern – get notified of the change of the state of an object being observed (observer/subject)
+Ex. Observer pattern â€“ get notified of the change of the state of an object being observed (observer/subject)
 
 Here with the behavioral patterns
 -  Chain of Responsibility
@@ -632,7 +632,7 @@ public class Main {
 ### Benefits
 - It helps to group related objects or functions
 - Also, reduces errors of mixing of objects or functions from different groups
-- Helps to abstract code so that user don’t need to worry about object creations
+- Helps to abstract code so that user donâ€™t need to worry about object creations
 
 ### Limitations
 - Only useful when we have to group processes or objects
@@ -1160,7 +1160,7 @@ We have declared the render() method as final in base class so that the subclass
 - Debugging and understanding the sequence of flow in the Template Method pattern can be confusing at times. You may end up implementing a method that shouldn't be implemented or not implementing an abstract method at all. Documentation and strict error handling has to be done.
 
 
-
+### [Buy me a Coffeee](http://bit.ly/2WryDT8)
 
 
 
