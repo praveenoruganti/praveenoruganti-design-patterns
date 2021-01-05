@@ -11,7 +11,7 @@ SUN Microsystems constituted a group with four professional with the name of Gan
 According to GOF, they found 23 design patterns as effective solutions for re-occurring problems.
 Java design patterns are divided into 3 i.e. Creational, Structural and Behavioral.
 
-![screenshot of the app](https://raw.githubusercontent.com/praveenoruganti/praveenoruganti-design-patterns/master/images/1.jpg)
+![screenshot of the app](https://raw.githubusercontent.com/praveenorugantitech/praveenorugantitech-design-patterns/master/images/1.jpg)
 
 ### Creational patterns
 Creational patterns are ones that create objects for you, rather than having you instantiate objects directly. This gives your program more flexibility in deciding which objects need to be created for a given case. Ex. Singleton pattern – used to restrict the creation of an object to one instance.
