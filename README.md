@@ -1,4 +1,4 @@
-# Praveen Oruganti Design Patterns
+# All About Design Patterns
 
 ## Why Design Patterns?
 1. Design patterns are used for solving recursive problems in a software application design.
