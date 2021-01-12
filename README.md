@@ -1,4 +1,4 @@
-# Praveen Oruganti Tech Design Patterns Course
+# Design Patterns Course
 
 ## Why Design Patterns?
 1. Design patterns are used for solving recursive problems in a software application design.
