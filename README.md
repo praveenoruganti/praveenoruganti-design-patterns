@@ -1,7 +1,9 @@
-![screenshot of the app](https://raw.githubusercontent.com/praveenorugantitech/praveenorugantitech-express-js/master/tech.PNG)
+
 
 
 # Design Patterns Course
+
+![screenshot of the app](https://raw.githubusercontent.com/praveenorugantitech/praveenorugantitech-express-js/master/tech.PNG)
 
 ## Why Design Patterns?
 1. Design patterns are used for solving recursive problems in a software application design.
